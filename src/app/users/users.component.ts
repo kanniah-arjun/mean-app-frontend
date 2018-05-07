@@ -24,6 +24,10 @@ export class UsersComponent implements OnInit {
       last_name: this.last_name,
       phone_number: this.phone_number
     };
+    console.log(this);
+    this.first_name = null;
+    this.last_name = null;
+    this.phone_number = null;
     this.userService.addUser(newUser)
       .subscribe(user => {
         this.users.push(user);
