@@ -17,7 +17,7 @@ export class UserService {
   // add UserService
   addUser(newUser) {
     const headers = new Headers();
-    headers.append('COntent-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
     return this.http.post('http://35.232.173.186:80/api/user', newUser, {headers: headers})
       .map(res => res.json());
   }
