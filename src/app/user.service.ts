@@ -10,7 +10,7 @@ export class UserService {
 
   // retreiving UserService
   getUsers() {
-    return this.http.get('http://node:3000/api/users')
+    return this.http.get(process.env.NODE_GET)
       .map(res => res.json());
   }
 
@@ -18,13 +18,13 @@ export class UserService {
   addUser(newUser) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://node:3000/api/user', newUser, {headers: headers})
+    return this.http.post(process.env.NODE_POST, newUser, {headers: headers})
       .map(res => res.json());
   }
 
   // delete UserService
   deleteUser(id) {
-    return this.http.delete('http://node:3000/api/user/' + id)
+    return this.http.delete(process.env.NODE_GET + id)
       .map(res => res.json());
   }
 
